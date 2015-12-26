@@ -8,9 +8,12 @@ class Util
 		
 	}
 	
-	public static function createResult():BatleResult {
+	public static function createResult():BattleResult {
 		var result = {
-			name:""
+			attackerName:"",
+			defenderName:"",
+			damage:0,
+			children:[]
 		}
 		return result;
 		
