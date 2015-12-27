@@ -11,4 +11,6 @@ class Weapon
 	
 	public var at:Float = 10;
 	
+	public var skillList:Array<Skill> = [];
+	
 }

@@ -2,13 +2,13 @@ package;
 
 import api.react.ReactDOM;
 import battle.BattleResult;
+import battle.Field;
 import battle.Util;
 import data.Character;
 import js.Browser;
 import js.Lib;
 import ui.ColorBox;
 using api.react.React;
-using battle.Calculator;
 
 class Main 
 {
@@ -25,8 +25,7 @@ class Main
 		
 		var chara:Character = new Character();
 		
-		chara.attackTo(chara);
-		
+		var field = new Field();
 	}
 	
 }

@@ -4,13 +4,17 @@ class Character
 {
 
 	
-	private var weaponList:Array<Weapon> = [];
+	public var weaponList:Array<Weapon> = [];
 	
 	public var name:String = "";
 	
 	public var sex:Sex = Sex.MALE;
 	
+	public var wait:Float = 0;
 	
+	public var teamIndex:Int = 0;
+	
+	public var activeSkill(get, null):Skill;
 	
 	public function new() 
 	{
@@ -48,6 +52,11 @@ class Character
 	function get_mdf():Float 
 	{
 		return mdf;
+	}
+	
+	function get_activeSkill():Skill 
+	{
+		return weaponList[0].skillList[0];
 	}
 	
 	public var at(get, null):Float;
