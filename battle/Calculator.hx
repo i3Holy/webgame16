@@ -15,6 +15,10 @@ class Calculator
 		
 		var result = Util.createResult();
 		
+		var damage = Std.int(attacker.at - defender.df);
+		
+		result.damage = damage;
+		
 		return result;
 		
 	}

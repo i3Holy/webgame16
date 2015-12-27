@@ -3,6 +3,15 @@ package data;
 class Character
 {
 
+	
+	private var weaponList:Array<Weapon> = [];
+	
+	public var name:String = "";
+	
+	public var sex:Sex = Sex.MALE;
+	
+	
+	
 	public function new() 
 	{
 		
@@ -17,7 +26,13 @@ class Character
 	
 	function get_at():Float 
 	{
-		return str;
+		
+		var result = str;
+		if (weaponList.length > 0) {
+			result += weaponList[0].at;
+		}
+		
+		return result;
 	}
 	
 	function get_df():Float
