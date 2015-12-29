@@ -7,6 +7,8 @@ class TimeLine
 
 	public var list:Array<Character> = [];
 	
+	public var aliveList(get, null):Array<Character>;
+	
 	public function new() 
 	{
 		
@@ -36,6 +38,15 @@ class TimeLine
 		
 		return None;
 		
+	}
+	
+	function get_aliveList():Array<Character> 
+	{
+		var result:Array<Character> = [];
+		for (chara in list) {
+			if (chara.hp > 0) result.push(chara);
+		}
+		return result;
 	}
 	
 }

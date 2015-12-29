@@ -13,4 +13,27 @@ class Weapon
 	
 	public var skillList:Array<Skill> = [];
 	
+	public function setData(data:WeaponData):Void {
+		at = data.at;
+	}
+	
+	public function getData():WeaponData {
+		var data = createData();
+		data.at = at;
+		return data;
+	}
+	
+	public static function createData():WeaponData {
+		var defaultValue:Float = 100;
+		var result = {
+			at:defaultValue
+		}
+		return result;
+	}
+	
+}
+
+
+typedef WeaponData = {
+	at:Float
 }

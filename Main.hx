@@ -23,9 +23,10 @@ class Main
 		var result:BattleResult = Util.createResult();
 		ReactDOM.render(ColorBox.createElement( { color:"black" } ), Browser.document.getElementById("app"));
 		
-		var chara:Character = new Character();
-		
 		var field = new Field();
+		var chara:Character = new Character(field);
+		
+		
 	}
 	
 }

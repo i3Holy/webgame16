@@ -7,12 +7,14 @@ class Field
 
 	private var timeLine:TimeLine;
 	
+	public var turn:Int = 0;
+	
 	public function new() 
 	{
 		
 	}
 	
-	public function execute():Void {
+	public function execute():Array<BattleResult> {
 		var result:Array<BattleResult> = [];
 		
 		var executed:Int = 0;
@@ -20,15 +22,16 @@ class Field
 		for (i in 0...1000) {
 			var isExe = timeLine.next();
 			isExe.iter(function(chara):Void {
-				var hasTarget = chara.pickTarget(timeLine.list);
-				hasTarget.iter(function(target) {
+				var targetList = chara.pickTarget(timeLine.list);
+				for (target in targetList) {
 					chara.attackTo(target);
-					executed++;
-				});
+				}
+				if (targetList.length > 0) executed++;
 			});
 			if (executed > 100) break;
 		}
 		
+		return result;
 	}
 	
 }
